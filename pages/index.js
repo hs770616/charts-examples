@@ -82,7 +82,7 @@ export default function RechartsCombined() {
   );
 }
 
-const CloseButtonEl2 = styled.div`
+const RechartsCombined = styled.div`
   height: 24px;
   width: 2px;
   background-color: #c1c1c1;
