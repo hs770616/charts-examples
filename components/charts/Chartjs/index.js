@@ -15,7 +15,7 @@ const genData = () => ({
       borderColor: `rgb(${rand()}, ${rand()}, ${rand()})`,
       borderWidth: 2,
       fill: false,
-      data: [rand(), rand(), rand(), rand(), rand(), rand()],
+      data: [rand(), rand(), rand(), rand(), rand(), rand(), rand()],
     },
     {
       type: "bar",
@@ -34,28 +34,14 @@ const genData = () => ({
   ],
 });
 
-// const options = {
-//   scales: {
-//     yAxes: [
-//       {
-//         ticks: {
-//           min: 0, // 스케일에 대한 최솟갓 설정, 0 부터 시작
-//           stepSize: 1, // 스케일에 대한 사용자 고정 정의 값
-//         },
-//       },
-//     ],
-//   },
-//   maintainAspectRatio: false, // false로 설정 시 사용자 정의 크기에 따라 그래프 크기가 결정됨.
-// };
-
 function Combined() {
   const [data, setData] = useState(genData());
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => setData(genData()), 5000);
+  useEffect(() => {
+    const interval = setInterval(() => setData(genData()), 5000);
 
-  //   return () => clearInterval(interval);
-  // }, []);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -72,7 +58,6 @@ function Combined() {
       </div> */}
       <Bar
         data={data}
-        // options={options}
         width={1000}
         height={500}
         options={{ maintainAspectRatio: false }}
